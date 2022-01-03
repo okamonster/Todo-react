@@ -13,11 +13,15 @@ export const App = () => {
       <div className="incomplete-area">
         <p className="title">未完了のTodo</p>
         <ul>
-          <div className="list-row">
-            <li>unkonow</li>
-            <button>完了</button>
-            <button>削除</button>
-          </div>
+          {incompleteTodos.map((todo) => {
+            return (
+              <div key={todo} className="list-row">
+                <li>{todo}</li>
+                <button>完了</button>
+                <button>削除</button>
+              </div>
+            );
+          })}
         </ul>
       </div>
       <div className="complete-area">
